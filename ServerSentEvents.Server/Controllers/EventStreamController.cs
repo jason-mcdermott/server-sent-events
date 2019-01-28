@@ -33,8 +33,6 @@ namespace ServerSentEvents.Server.Controllers
 
                             foreach (var @event in consumer.GetConsumingEnumerable(clientDisconnectToken))
                             {
-                                //await writer.WriteLineAsync("data: " + @event);
-                                //await writer.WriteLineAsync();
                                 await writer.WriteLineAsync(@event);
                                 await writer.FlushAsync();
                             }
